@@ -8,9 +8,6 @@ metadata:
 spec:
   strategy: 
    type: Recreate
-   rollingUpdate:
-    maxUnavailable: 1
-    maxSurge: 3
     
   replicas: 3
   selector:
