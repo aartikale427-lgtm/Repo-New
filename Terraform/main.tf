@@ -10,8 +10,8 @@ terraform {
 }
 
 resource "aws_instance" "ec2" {
-  ami   = "ami-05d2d839d4f73aafb"
-  instance_type = "t2.micro"
+  ami   = "var.amiID"
+  instance_type = "var.instance_type"
   key_name = "key-pair.pem"
   vpc_security_group_ids = ["sg-0de80a35bf4a38319"]
   availability_zone = "ap-south-1"
