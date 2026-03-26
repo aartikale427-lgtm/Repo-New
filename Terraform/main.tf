@@ -1,13 +1,23 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = var.rg
 }
-
-resource "aws_instance" "ec2" {
-  ami           = var.amiID
-  instance_type = var.instance_type
-  key_name      = var.key_name
-
-  tags = {
-    Name = var.instance_name
+terraform {
+  backend "s3" {
+    bucket = "terraform-100"
+    region = "ap-south-1"
+    key = "tfstatefile"
   }
 }
+resource "aws_instance" "myinstance" {
+  ami = var.ami_id
+  instance_type = var.instance_type_mumbai
+  key_name = var.key_name
+  vpc_security_group_ids = [ var.mysg ]
+  availability_zone = var.az
+  tags = {
+    name  = "aarti"
+    Name = "myinstance"
+    Environment = "dev"
+  }
+}
+

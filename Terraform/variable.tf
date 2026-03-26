@@ -1,19 +1,19 @@
-variable "amiID" {
-  description = "ami-05d2d839d4f73aafb"
-  type        = string
+variable "ami_id" {
+  default = "ami-05d2d839d4f73aafb"
+  description = "ap-south-1_ami"
 }
-
-variable "instance_type" {
-  description = "t3.micro"
-  type        = string
+variable "instance_type_mumbai" {
+  default = "t3.micro"
 }
-
 variable "key_name" {
-  description = "key-pair.pem"
-  type        = string
+  default = "key-pair.pem"
 }
-
-variable "instance_name" {
-  description = "terraform1"
-  type        = string
+variable "mysg" {
+  default = "sg-0de80a35bf4a38319"
+}
+variable "rg" {
+  default = "ap-south-1"
+}
+variable "az" {
+  default = "ap-south-1a"
 }
