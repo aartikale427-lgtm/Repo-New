@@ -1,5 +1,5 @@
-variable "amiID" {
-  default = "ami-05d2d839d4f73aafb"
+ami = var.amiID{
+instance_type = var.instance_type
   description = "ap-south-1"
 }
 
