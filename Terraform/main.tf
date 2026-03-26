@@ -17,6 +17,6 @@ resource "aws_instance" "ec2" {
   availability_zone = "ap-south-1"
   tags = {
     Name = "MyEC2"
-    name = "aarti"
+    name = "ak"
   }
 }
