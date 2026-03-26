@@ -6,7 +6,7 @@ variable "instance_type_mumbai" {
   default = "t3.micro"
 }
 variable "key_name" {
-  default = "key-pair.pem"
+  default = "key-pair"
 }
 variable "mysg" {
   default = "sg-0de80a35bf4a38319"
