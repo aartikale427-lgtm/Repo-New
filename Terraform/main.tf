@@ -11,7 +11,7 @@ terraform {
 
 resource "aws_instance" "ec2" {
   ami   = "var.amiID"
-  instance_type = "var.instance_type"
+  instance_type = "var.instance_type.aws_instance"
   key_name = "key-pair.pem"
   vpc_security_group_ids = ["sg-0de80a35bf4a38319"]
   availability_zone = "ap-south-1"
