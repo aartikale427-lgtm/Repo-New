@@ -27,7 +27,7 @@ variable "ami" {
   default = "ami-0763cf792771fe1bd"
 }
 variable "key_pair" {
-  default = "id_rsa"
+  default = "key_pair"
 }
 variable "pvt-tags" {
   type = map
