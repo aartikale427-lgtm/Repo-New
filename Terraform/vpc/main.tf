@@ -22,7 +22,7 @@ resource "aws_subnet" "pvt-subnet" {
 resource "aws_subnet" "pub-subnet" {
   vpc_id     = aws_vpc.my-vpc.id
   cidr_block = var.pub_cidr
-  availability_zone = var.pub-az
+  availability_zone = var.pub_az
   tags = {
     Name = "${var.project}-pub-sub"
   }
@@ -79,7 +79,7 @@ resource "aws_instance" "pvt-instance" {
   ami = var.ami
   instance_type = var.instance_type
   key_name      = var.key_pair
-  tags          = var.pvt-tags
+  tags          = var.pvt_tags
   subnet_id     = aws_subnet.pvt-subnet.id
   vpc_security_group_ids = [aws_security_group.sg1.id ]
 }
