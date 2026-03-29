@@ -1,13 +1,13 @@
 variable "region" {
     default = "ap-south-1"
 }
-variable "vpc-cidr" {
+variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
-variable "pvt-cidr" {
+variable "pvt_cidr" {
   default = "10.0.0.0/24"
 }
-variable "pub-cidr" {
+variable "pub_cidr" {
   default = "10.0.1.0/24"
 }
 variable "pvt-az"{
@@ -21,10 +21,10 @@ variable "project" {
 }
 variable "instance_type" {
     description = "enter instance type"
-    default = "t2.micro"
+    default = "t3.micro"
 }
 variable "ami" {
-  default = "ami-0763cf792771fe1bd"
+  default = "ami-05d2d839d4f73aafb"
 }
 variable "key_pair" {
   default = "key_pair"
