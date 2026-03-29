@@ -88,7 +88,7 @@ resource "aws_instance" "pub-instance" {
   ami = var.ami
   instance_type = var.instance_type
   key_name      = var.key_pair
-  tags          = var.pub-tags
+  tags          = var.pub_tags
   subnet_id     = aws_subnet.pub-subnet.id
   vpc_security_group_ids = [aws_security_group.sg1.id]
 
