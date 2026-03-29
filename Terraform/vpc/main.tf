@@ -11,7 +11,7 @@ resource "aws_vpc" "my-vpc" {
     env = "var.env"
   }
 }
-resource "aws_subnet" "pvt-subnet" {
+resource "aws_subnet" "pvt_subnet" {
   vpc_id     = aws_vpc.my-vpc.id
   cidr_block = var.pvt_cidr
   availability_zone = var.pvt_az
@@ -19,7 +19,7 @@ resource "aws_subnet" "pvt-subnet" {
     Name = "${var.project}-pvt_sub"
   }
 }
-resource "aws_subnet" "pub-subnet" {
+resource "aws_subnet" "pub_subnet" {
   vpc_id     = aws_vpc.my-vpc.id
   cidr_block = var.pub_cidr
   availability_zone = var.pub_az
