@@ -1,15 +1,19 @@
 variable "region" {
-    default = "ap-south-1"
+  default = "ap-south-1"
 }
+
 variable "vpc_cidr" {
   default = "10.0.0.0/16"
 }
+
 variable "pvt_cidr" {
   default = "10.0.0.0/24"
 }
+
 variable "pub_cidr" {
   default = "10.0.1.0/24"
 }
+
 variable "pvt_az" {
   default = "ap-south-1a"
 }
@@ -17,30 +21,36 @@ variable "pvt_az" {
 variable "pub_az" {
   default = "ap-south-1b"
 }
+
 variable "project" {
   default = "cloud"
 }
+
 variable "instance_type" {
-    description = "enter instance type"
-    default = "t3.micro"
+  description = "enter instance type"
+  default     = "t3.micro"
 }
+
 variable "ami" {
   default = "ami-05d2d839d4f73aafb"
 }
+
 variable "key_pair" {
   default = "key_pair"
 }
-variable "pvt-tags" {
-  type = map
+
+variable "pvt_tags" {
+  type = map(string)
   default = {
-    name = "pvt-instance"
-    env = "terraform-practice"
+    Name = "pvt-instance"
+    env  = "terraform-practice"
   }
 }
-variable "pub-tags" {
-  type = map
+
+variable "pub_tags" {
+  type = map(string)
   default = {
-    name = "pub-instance"
-    env = "terraform-practice"
+    Name = "pub-instance"
+    env  = "terraform-practice"
   }
 }
