@@ -5,24 +5,24 @@ provider "aws" {
   region = local.region
 }
 resource "aws_vpc" "my-vpc" {
-  cidr_block       = var.vpc_cidr
+  cidr_block       = var.vpc-cidr
   tags = {
     Name = "${var.project}-vpc"
     env = "var.env"
   }
 }
-resource "aws_subnet" "pvt_subnet" {
+resource "aws_subnet" "pvt-subnet" {
   vpc_id     = aws_vpc.my-vpc.id
-  cidr_block = var.pvt_cidr
-  availability_zone = var.pvt_az
+  cidr_block = var.pvt-cidr
+  availability_zone = var.pvt-az
   tags = {
-    Name = "${var.project}-pvt_sub"
+    Name = "${var.project}-pvt-sub"
   }
 }
-resource "aws_subnet" "pub_subnet" {
+resource "aws_subnet" "pub-subnet" {
   vpc_id     = aws_vpc.my-vpc.id
-  cidr_block = var.pub_cidr
-  availability_zone = var.pub_az
+  cidr_block = var.pub-cidr
+  availability_zone = var.pub-az
   tags = {
     Name = "${var.project}-pub-sub"
   }
@@ -79,7 +79,7 @@ resource "aws_instance" "pvt-instance" {
   ami = var.ami
   instance_type = var.instance_type
   key_name      = var.key_pair
-  tags          = var.pvt_tags
+  tags          = var.pvt-tags
   subnet_id     = aws_subnet.pvt-subnet.id
   vpc_security_group_ids = [aws_security_group.sg1.id ]
 }
@@ -88,7 +88,7 @@ resource "aws_instance" "pub-instance" {
   ami = var.ami
   instance_type = var.instance_type
   key_name      = var.key_pair
-  tags          = var.pub_tags
+  tags          = var.pub-tags
   subnet_id     = aws_subnet.pub-subnet.id
   vpc_security_group_ids = [aws_security_group.sg1.id]
 
