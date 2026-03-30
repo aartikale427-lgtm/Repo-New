@@ -12,7 +12,7 @@ module "ec2-instance" {
   source = "/modules/Instance-Ec2"
   image_id = var.ami_id
   key_pair = var.key_name
-  instance_type = var.instance_type_mumbai
+  instance_type = var.instance_type
   project = var.project
   sg_ids = var.mysg
   env = var.env
