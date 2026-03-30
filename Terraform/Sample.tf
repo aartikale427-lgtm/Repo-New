@@ -25,5 +25,5 @@ module "my-vpc" {
   vpc_cidr = var.vpc-cidr
   pvt_subnet_cidr = var.pvt_subnet_cidr
   pub_subnet_cidr = var.pub_subnet_cidr
-  env = var.env
+
 }
