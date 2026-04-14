@@ -1,0 +1,27 @@
+pipeline {
+    agent {
+        node {label 'node1'}
+    }
+    stages {
+        stage('pull') {
+            steps {
+                echo "pulling code"
+            }
+        }
+        stage('Build') {
+            steps {
+                echo "building code"
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "testing code"
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo "deploying code"
+            }
+        }
+    }
+}
