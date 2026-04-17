@@ -5,6 +5,7 @@ pipeline {
     stages {
         stage('pull') {
             steps {
+                 git branch: 'main', url: 'https://github.com/aartikale427-lgtm/StudentData.git'
                 echo "pulling code"
             }
         }
